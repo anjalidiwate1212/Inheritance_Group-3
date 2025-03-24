@@ -37,6 +37,21 @@ namespace OOPs.Inheritance
             Console.WriteLine($"ReportCount: {_semester} ");
         }
     }
+    public class Cr : Student1
+    {
+        private int _no_of_students;
+
+        public Cr(string firstName, string lastName, int semester, int nof) : base(firstName, lastName, semester)
+        {
+            _no_of_students = nof;
+        }
+
+        public override void DisplayInfo()
+        {
+            base.DisplayInfo();
+            Console.WriteLine($"Count of Students: { _no_of_students} ");
+        }
+    }
 
     public class InheritanceExample2
     {
@@ -47,8 +62,10 @@ namespace OOPs.Inheritance
             Student1 m = new Student1("Anjali", "Diwate", 2);
             m.DisplayInfo();
 
-            Console.WriteLine();
+            Cr c = new Cr("Anjali", "Diwate", 2, 50); 
+            c.DisplayInfo();
 
+            Console.WriteLine();
 
         }
     }
